@@ -19,8 +19,16 @@ async function getDATA() {
 
     keys.forEach((key) => {
         key.addEventListener('click', () => {
-            if (word.includes(key.innerText))
-            {} //need to reveal the letter from the display string , foreach loop
+            if (word.includes(key.innerText)) {
+                for (let i = 0; i < word.length; i++) {
+                 if (word[i] === key.innerText[i]) {
+                    display === 
+                 }
+
+                  };
+            };
+            
+            //need to reveal the letter from the display string , foreach loop
             // need to decrease number of lives
             // update the live display
             //check if display = word 
@@ -28,6 +36,7 @@ async function getDATA() {
         
 
 
-}
+        ));
+};
 
-getDATA();
+getDATA()
