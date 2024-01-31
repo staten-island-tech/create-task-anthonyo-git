@@ -1,9 +1,8 @@
 import { DomSelectors } from "../js/dom.js";
 
-let { wordDisplay, keys, livesDisplay } = DomSelectors();
+const { wordDisplay, keys, livesDisplay } = DomSelectors();
 
-
-
+let guessedLetters = []; // array 
 let word = '';
 let display = '';
 let lives = 8;
@@ -21,22 +20,29 @@ async function getDATA() {
         key.addEventListener('click', () => {
             if (word.includes(key.innerText)) {
                 for (let i = 0; i < word.length; i++) {
-                 if (word[i] === key.innerText[i]) {
-                    display === 
-                 }
+                    if (word[i] === key.innerText) {
+                        display = display.split('');
+                        display[i] = key.innerText;
+                        display = display.join('');
+                    }
+                }
+                wordDisplay.innerHTML = display;
+            } else {
+                lives--;
+                livesDisplay.innerHTML = '_'.repeat(lives);
+            }
+            if (display === word) {
+                console.log('You win!');
+            } else if (lives === 0) {
+                console.log('You lose!');
+            }
+        });
+    });
+}
 
-                  };
-            };
-            
-            //need to reveal the letter from the display string , foreach loop
+getDATA();
+
+//need to reveal the letter from the display string , foreach loop
             // need to decrease number of lives
             // update the live display
             //check if display = word 
-        
-        
-
-
-        ));
-};
-
-getDATA()

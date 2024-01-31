@@ -1,6 +1,6 @@
 export function DomSelectors() {
     return {
-    wordDisplay: documentquerySelector('#wordDisplay'),
+    wordDisplay: document.querySelector('#wordDisplay'),
     keys: Array.from(document.querySelectorAll('.key')),
     livesDisplay: document.querySelector('#livesDisplay'),
     };
