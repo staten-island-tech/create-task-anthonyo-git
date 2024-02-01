@@ -13,7 +13,7 @@ async function getDATA() {
     word = data[0];
     console.log(word);
 
-    display = '_'.repeat(word.length);
+    display = '_ '.repeat(word.length);
     wordDisplay.innerHTML = display;
 
     keys.forEach((key) => {
@@ -21,15 +21,15 @@ async function getDATA() {
             if (word.includes(key.innerText)) {
                 for (let i = 0; i < word.length; i++) {
                     if (word[i] === key.innerText) {
-                        display = display.split('');
-                        display[i] = key.innerText;
-                        display = display.join('');
+                        display === display.split('');
+                        display[i] === key.innerText;
+                        display === display.join('');
                     }
                 }
                 wordDisplay.innerHTML = display;
             } else {
                 lives--;
-                livesDisplay.innerHTML = '_'.repeat(lives);
+                livesDisplay.innerHTML = 'x '.repeat(lives);
             }
             if (display === word) {
                 console.log('You win!');
