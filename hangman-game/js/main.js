@@ -18,12 +18,13 @@ async function getDATA() {
 
     keys.forEach((key) => {
         key.addEventListener('click', () => {
-            if (word.includes(key.innerText)) {
+            let guessedLetter = key.innerText.toLowerCase();
+            if (word.toLowerCase().includes(guessedLetter)) {
                 for (let i = 0; i < word.length; i++) {
-                    if (word[i] === key.innerText) {
-                        display === display.split('');
-                        display[i] === key.innerText;
-                        display === display.join('');
+                    if (word[i] === guessedLetter) {
+                        display = display.split('');
+                        display[i*2] = key.innerText; //for _ + space 
+                        display = display.join('');
                     }
                 }
                 wordDisplay.innerHTML = display;
@@ -31,7 +32,7 @@ async function getDATA() {
                 lives--;
                 livesDisplay.innerHTML = 'x '.repeat(lives);
             }
-            if (display === word) {
+            if (display.toLowerCase() === word.toLowerCase()) {
                 console.log('You win!');
             } else if (lives === 0) {
                 console.log('You lose!');
