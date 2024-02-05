@@ -49,8 +49,3 @@ async function getDATA() {
 }
 
 getDATA();
-
-//need to reveal the letter from the display string , foreach loop
-            // need to decrease number of lives
-            // update the live display
-            //check if display = word 
