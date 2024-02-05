@@ -7,8 +7,8 @@ let word = '';
 let display = '';
 let lives = 8;
 
-async function getDATA() {
-    let res = await fetch("https://random-word-api.vercel.app/api?words=1&length=5");
+async function getDATA(parameter) {
+    let res = await fetch(parameter);
     let data = await res.json();
     word = data[0];
     console.log(word);
@@ -48,4 +48,7 @@ async function getDATA() {
     });
 }
 
-getDATA();
+getDATA("https://random-word-api.vercel.app/api?words=1&length=5");
+
+const newWordButton = document.getElementById('newWordButton');
+newWordButton.addEventListener('click', () => location.reload());
