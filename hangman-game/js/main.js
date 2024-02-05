@@ -19,11 +19,14 @@ async function getDATA() {
     keys.forEach((key) => {
         key.addEventListener('click', () => {
             let guessedLetter = key.innerText.toLowerCase();
+            if (!guessedLetters.includes(guessedLetter)) {
+                guessedLetters.push(guessedLetter);
+            }
             if (word.toLowerCase().includes(guessedLetter)) {
                 for (let i = 0; i < word.length; i++) {
-                    if (word[i] === guessedLetter) {
+                    if (word[i].toLowerCase() === guessedLetter) {
                         display = display.split('');
-                        display[i*2] = key.innerText; //for _ + space 
+                        display[i * 2] = key.innerText; //for _ + space 
                         display = display.join('');
                     }
                 }
@@ -32,10 +35,14 @@ async function getDATA() {
                 lives--;
                 livesDisplay.innerHTML = 'x '.repeat(lives);
             }
-            if (display.toLowerCase() === word.toLowerCase()) {
+            if (display.replace(/ /g, '').toLowerCase() === word.toLowerCase()) {
                 console.log('You win!');
+                console.log(guessedLetter)
+                console.log(guessedLetters)
+                winOrLose.textContent = 'You win!';
             } else if (lives === 0) {
                 console.log('You lose!');
+                winOrLose.textContent = 'You lose!';
             }
         });
     });
