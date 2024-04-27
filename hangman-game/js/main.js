@@ -2,7 +2,7 @@ import { DomSelectors } from "../js/dom.js";
 
 const { wordDisplay, keys, livesDisplay } = DomSelectors();
 
-let guessedLetters = []; // array 
+let guessedLetters = []; 
 let word = '';
 let display = '';
 let lives = 8;
@@ -26,7 +26,7 @@ async function getDATA(parameter) {
                 for (let i = 0; i < word.length; i++) {
                     if (word[i].toLowerCase() === guessedLetter) {
                         display = display.split('');
-                        display[i * 2] = key.innerText; //for _ + space 
+                        display[i * 2] = key.innerText; 
                         display = display.join('');
                     }
                 }

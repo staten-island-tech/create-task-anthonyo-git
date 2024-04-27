@@ -6,8 +6,6 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: yellow;
-  /* background-image: url("https://random.imagecdn.app/8000/2000"); */
-  /* background-image: url("https://wallpapers.com/images/hd/light-color-smoke-art-2ius9lpteovzjquv.jpg"); */
   background-repeat: no-repeat;
   background-size: 100%;
 
@@ -23,7 +21,6 @@ body {
   text-align: center;
   place-items: center;
   min-height: 100vh;
-  /* background-color: #000000; */
   font-size: 1.1em;
   color: #000000;
  }
